@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuthContext } from "../model/context";
+import { useAuthContext } from "../model/auth-context";
 import { AuthEvent } from "../model/auth";
 
 export function useAuthenticated() {
