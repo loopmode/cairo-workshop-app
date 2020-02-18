@@ -5,6 +5,7 @@ import { Dashboard } from "./pages/Dashboard";
 import { ListPage } from "./pages/ListPage";
 import { BoardPage } from "./pages/BoardPage";
 import { LoginPage } from "./pages/LoginPage";
+import { UsersPage } from "./pages/UsersPage";
 
 import { AuthProvider, authService, useAuthContext } from "./model/auth-context";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
@@ -31,6 +32,7 @@ function App() {
               <NavLink to="/">Dashboard</NavLink>
               <NavLink to="/list">List</NavLink>
               <NavLink to="/board">Board</NavLink>
+              <NavLink to="/users">Users</NavLink>
               <span className="flex-1" />
               {!isAuthenticated && <LoginForm />}
               {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
@@ -41,6 +43,7 @@ function App() {
                 <Route path="/login" component={LoginPage} />
                 <ProtectedRoute path="/list" component={ListPage} fallback={<PleaseLogIn />} />
                 <ProtectedRoute path="/board" component={BoardPage} />
+                <Route path="/users" component={UsersPage} />
               </Switch>
             </main>
           </div>

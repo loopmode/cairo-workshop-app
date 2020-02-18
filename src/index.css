@@ -10,6 +10,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.flex {
+  display: flex;
+}
+
 .flex-1 {
   flex: 1;
 }
