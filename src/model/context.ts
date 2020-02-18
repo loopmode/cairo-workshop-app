@@ -9,4 +9,4 @@ export const AuthContext = React.createContext<AuthService>(authService);
 export const AuthProvider = AuthContext.Provider;
 export const AuthConsumer = AuthContext.Consumer;
 
-export const useAuth = () => React.useContext(AuthContext);
+export const useAuthContext = () => React.useContext(AuthContext);

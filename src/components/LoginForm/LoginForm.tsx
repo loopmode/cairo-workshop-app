@@ -1,5 +1,5 @@
 import React, { FormEvent, ChangeEvent } from "react";
-import { useAuth } from "../../model/context";
+import { useAuthContext } from "../../model/context";
 
 interface FormState {
   username: string;
@@ -12,7 +12,7 @@ const initialState: FormState = {
 };
 
 export const LoginForm: React.FC = () => {
-  const authService = useAuth();
+  const authService = useAuthContext();
   
   const [state, setState] = React.useState<FormState>(initialState);
 
@@ -37,8 +37,7 @@ export const LoginForm: React.FC = () => {
     console.log({ registered });
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Login</h3>
+    <form onSubmit={handleSubmit}> 
       <input value={state.username} onChange={handleChange} name="username" type="text" required />
       <input value={state.password} onChange={handleChange} name="password" type="password" required />
       <button type="submit">Login</button>
