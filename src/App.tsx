@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import css from "./App.module.scss";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { Dashboard } from "./pages/Dashboard";
+import { ListPage } from "./pages/ListPage";
+import { BoardPage } from "./pages/BoardPage";
+import { LoginPage } from "./pages/LoginPage";
+
+import { AuthProvider, authService } from "./model/context"; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AuthProvider value={authService}>
+        <div className={css.App}>
+          <nav>
+            <NavLink to="/">Dashboard</NavLink>
+            <NavLink to="/list">List</NavLink>
+            <NavLink to="/board">Board</NavLink>
+          </nav>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/list" component={ListPage} />
+          <Route path="/board" component={BoardPage} />
+        </div>
+      </AuthProvider>
+    </Router>
   );
 }
 
