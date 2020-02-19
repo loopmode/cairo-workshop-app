@@ -9,11 +9,15 @@ import {
   registerError
 } from "../slices/auth";
 
+const wait = (delay: number) =>
+  new Promise(resolve => setTimeout(resolve, delay));
+
 export const login = (
   email: string,
   password: string
 ): AppThunk => async dispatch => {
   try {
+    await wait(Math.random() * 1000);
     const user = await fakeAuth.signin(email, password);
     dispatch(loginSuccess(user));
   } catch (error) {
@@ -35,6 +39,7 @@ export const register = (
   password: string
 ): AppThunk => async dispatch => {
   try {
+    await wait(Math.random() * 1000);
     const user = await fakeAuth.signup(email, password);
     dispatch(registerSuccess(user));
   } catch (error) {
