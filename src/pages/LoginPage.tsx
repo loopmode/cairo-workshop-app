@@ -15,6 +15,7 @@ export const LoginPage = () => {
   }, [history, from, isAuthenticated]);
   return (
     <div>
+      <h1>Please log in</h1>
       <LoginForm />
     </div>
   );

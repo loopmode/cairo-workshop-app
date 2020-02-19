@@ -7,7 +7,7 @@ import {
   Switch
 } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard";
-import { ListPage } from "./pages/ListPage";
+import { TodoListPage } from "./pages/TodoListPage";
 import { BoardPage } from "./pages/BoardPage";
 import { LoginPage } from "./pages/LoginPage";
 import { UsersPage } from "./pages/UsersPage";
@@ -23,7 +23,7 @@ function App() {
         <nav>
           <NavLink to="/">Dashboard</NavLink>
           <NavLink to="/counters">Counters</NavLink>
-          <NavLink to="/list">List</NavLink>
+          <NavLink to="/list">Todo list</NavLink>
           <NavLink to="/board">Board</NavLink>
           <NavLink to="/users">Users</NavLink>
           <span className="flex-1" />
@@ -34,7 +34,7 @@ function App() {
             <Route path="/" exact component={Dashboard} />
             <Route path="/login" component={LoginPage} />
             <Route path="/counters" component={CountersPage} />
-            <ProtectedRoute path="/list" component={ListPage} />
+            <ProtectedRoute path="/list" component={TodoListPage} />
             <ProtectedRoute path="/board" component={BoardPage} />
             <Route path="/users" component={UsersPage} />
           </Switch>

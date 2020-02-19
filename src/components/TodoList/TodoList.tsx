@@ -17,8 +17,8 @@ export const TodoList = () => {
                 onChange={() => dispatch(toggleTodo(todo.id))}
               />
               {todo.text}
+              <button style={{marginLeft: 30}} onClick={() => dispatch(removeTodo(todo.id))}>remove</button>
             </label>
-            <button onClick={() => dispatch(removeTodo(todo.id))}>x</button>
           </div>
         );
       })}
