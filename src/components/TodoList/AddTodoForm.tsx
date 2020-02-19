@@ -1,15 +1,17 @@
 import React, { FormEvent } from "react";
 import { createTodo, addTodo } from "../../model/slices/todos";
-import store from "../../model/store";
+import { useDispatch } from "react-redux";
 
 export const AddTodoForm = () => {
   const [value, setValue] = React.useState("");
+  const dispatch = useDispatch();
 
   const handleAddTodo = (event: FormEvent | MouseEvent) => {
     event.preventDefault();
 
     const todo = createTodo(value);
-    store.dispatch(addTodo(todo));
+
+    dispatch(addTodo(todo));
 
     setValue("");
   };
