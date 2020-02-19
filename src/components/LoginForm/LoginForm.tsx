@@ -44,6 +44,7 @@ export const LoginForm: React.FC = () => {
         onChange={handleChange}
         name="email"
         type="email"
+        autoComplete="username"
         required
       />
       <input
@@ -51,6 +52,7 @@ export const LoginForm: React.FC = () => {
         onChange={handleChange}
         name="password"
         type="password"
+        autoComplete="current-password"
         required
       />
       <button type="submit">Login</button>
