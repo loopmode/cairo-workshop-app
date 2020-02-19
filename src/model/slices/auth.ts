@@ -18,19 +18,13 @@ const authSlice = createSlice({
   reducers: {
     // we can directly return a new state object, as usual with immutable redux state
     loginError(state, action: PayloadAction<string>) {
-      return {
-        ...state,
-        error: action.payload,
-        isAuthenticated: false
-      };
+      state.error = action.payload;
+      state.isAuthenticated = false;
     },
     loginSuccess(state, action: PayloadAction<User>) {
-      return {
-        ...state,
-        error: null,
-        isAuthenticated: false,
-        user: action.payload
-      };
+      state.error = null;
+      state.isAuthenticated = false;
+      state.user = action.payload;
     },
     // but because @reduxjs/toolkit is using immer.js, we can also seemingly mutate the state
     logoutError(state, action: PayloadAction<string>) {

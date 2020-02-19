@@ -5,10 +5,12 @@ import { Todo, removeTodo, toggleTodo } from "../../model/slices/todos";
 
 export const TodoList = () => {
   const dispatch = useDispatch();
-  const todos = useSelector<RootState, Todo[]>(state => state.todos);
+  const todos = useSelector<RootState, { [id: string]: Todo }>(
+    state => state.todos
+  );
   return (
     <div>
-      {todos.map(todo => {
+      {Object.values(todos).map(todo => {
         return (
           <div className="flex" key={todo.id}>
             <label className="flex-1">

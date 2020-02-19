@@ -6,24 +6,22 @@ export type Todo = {
   completed: boolean;
 };
 
-const initialState: Todo[] = [];
+const initialState: {
+  [id: string]: Todo;
+} = {};
 
 const todosSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
     addTodo(state, action: PayloadAction<Todo>) {
-      const { id, text } = action.payload;
-      state.push({ id, text, completed: false });
+      state[action.payload.id] = action.payload;
     },
-    removeTodo(state, action: PayloadAction<string>) {
-      state.splice(
-        state.findIndex(todo => todo.id === action.payload),
-        1
-      );
+    removeTodo(state, { payload: id }: PayloadAction<string>) {
+      delete state[id];
     },
-    toggleTodo(state, action: PayloadAction<string>) {
-      const todo = state.find(todo => todo.id === action.payload);
+    toggleTodo(state, { payload: id }: PayloadAction<string>) {
+      const todo = state[id];
       if (todo) {
         todo.completed = !todo.completed;
       }
