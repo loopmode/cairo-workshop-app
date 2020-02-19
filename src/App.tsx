@@ -15,18 +15,11 @@ import { UsersPage } from "./pages/UsersPage";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 import { useAuthenticated } from "./hooks/useAuthenticated";
-import { logout } from "./model/api/auth";
-import { useDispatch } from "react-redux";
-
-const PleaseLogIn = () => (
-  <div>
-    <h3>You need to be logged in!</h3>
-  </div>
-);
+import LogoutButton from "./components/LogoutButton/LogoutButton";
 
 function App() {
   const isAuthenticated = useAuthenticated();
-  const dispatch = useDispatch()
+
   return (
     <Router>
       <div className={css.App}>
@@ -37,18 +30,18 @@ function App() {
           <NavLink to="/users">Users</NavLink>
           <span className="flex-1" />
           {!isAuthenticated && <LoginForm />}
-          {isAuthenticated && <button onClick={() => dispatch(logout())}>Log out</button>}
+          <LogoutButton />
         </nav>
         <main>
           <Switch>
             <Route path="/" exact component={Dashboard} />
             <Route path="/login" component={LoginPage} />
+            <ProtectedRoute path="/list" component={ListPage} />
             <ProtectedRoute
-              path="/list"
-              component={ListPage}
-              fallback={<PleaseLogIn />}
+              path="/board"
+              component={BoardPage}
+              fallback={<h3>You need to be logged in!</h3>}
             />
-            <ProtectedRoute path="/board" component={BoardPage} />
             <Route path="/users" component={UsersPage} />
           </Switch>
         </main>
