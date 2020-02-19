@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useAuthenticated } from "../../hooks/useAuthenticated";
 import { logout } from "../../model/api/auth";
 
-function LogoutButton({ redirect = "/" }) {
+function LogoutButton({ redirect = "" }) {
   const isAuthenticated = useAuthenticated();
   const history = useHistory();
   const dispatch = useDispatch();
