@@ -15,6 +15,7 @@ import { CountersPage } from "./pages/CountersPage";
 
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { HeaderLogin } from "./components/HeaderLogin/HeaderLogin";
+import SwapiPage from "./pages/swapi/SwapiPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <NavLink to="/list">Todo list</NavLink>
           <NavLink to="/board">Board</NavLink>
           <NavLink to="/users">Users</NavLink>
+          <NavLink to="/swapi">Start Wars API</NavLink>
           <span className="flex-1" />
           <HeaderLogin />
         </nav>
@@ -37,6 +39,7 @@ function App() {
             <ProtectedRoute path="/list" component={TodoListPage} />
             <ProtectedRoute path="/board" component={BoardPage} />
             <Route path="/users" component={UsersPage} />
+            <Route path="/swapi" component={SwapiPage} />
           </Switch>
         </main>
       </div>
