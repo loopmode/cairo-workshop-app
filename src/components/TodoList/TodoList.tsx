@@ -1,13 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../model/rootReducer";
-import { Todo, removeTodo, toggleTodo } from "../../model/slices/todos";
+import { removeTodo, toggleTodo, TodosSlice } from "../../model/slices/todos";
 
 export const TodoList = () => {
   const dispatch = useDispatch();
-  const todos = useSelector<RootState, { [id: string]: Todo }>(
-    state => state.todos
-  );
+  const todos = useSelector<RootState, TodosSlice>(state => state.todos);
   return (
     <div>
       {Object.values(todos).map(todo => {

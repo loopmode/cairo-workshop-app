@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export type TodosSlice = {
+  [id: string]: Todo;
+};
 export type Todo = {
   id: string;
   text: string;
   completed: boolean;
 };
 
-const initialState: {
-  [id: string]: Todo;
-} = {};
+const initialState: TodosSlice = {};
 
 const todosSlice = createSlice({
   name: "todos",
