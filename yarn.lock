@@ -1449,6 +1449,11 @@
     "@types/react-dom" "*"
     "@types/testing-library__dom" "*"
 
+"@types/webpack-env@^1.15.1":
+  version "1.15.1"
+  resolved "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.15.1.tgz#c8e84705e08eed430b5e15b39c65b0944e4d1422"
+  integrity sha512-eWN5ElDTeBc5lRDh95SqA8x18D0ll2pWudU3uWiyfsRmIZcmUXpEsxPU+7+BsdCrO2vfLRC629u/MmjbmF+2tA==
+
 "@types/yargs-parser@*":
   version "15.0.0"
   resolved "https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-15.0.0.tgz#cb3f9f741869e20cce330ffbeb9271590483882d"
@@ -4259,6 +4264,11 @@ extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
+
+fake-auth@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/fake-auth/-/fake-auth-0.0.8.tgz#76758d11e68ec81c9d29662ad2d3a03d1bd44c2f"
+  integrity sha512-uGMLYizEzgFqu6YkBkGjlgK/gG0UVjkCJ+QqNTGraBsgxK7lETLClLMAwcZAxnquYnVdRZ/RYfWiLWb8d0Emug==
 
 fast-deep-equal@^3.1.1:
   version "3.1.1"
