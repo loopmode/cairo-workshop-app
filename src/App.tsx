@@ -1,18 +1,22 @@
 import React from "react";
 import css from "./App.module.scss";
-import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  Switch
+} from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard";
 import { ListPage } from "./pages/ListPage";
 import { BoardPage } from "./pages/BoardPage";
 import { LoginPage } from "./pages/LoginPage";
 import { UsersPage } from "./pages/UsersPage";
 
-import { AuthProvider, authService, useAuthContext } from "./model/auth-context";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 import { useAuthenticated } from "./hooks/useAuthenticated";
-import { Provider } from "react-redux";
-import { store } from "./model/store";
+import { logout } from "./model/api/auth";
+import { useDispatch } from "react-redux";
 
 const PleaseLogIn = () => (
   <div>
@@ -21,34 +25,34 @@ const PleaseLogIn = () => (
 );
 
 function App() {
-  const { logout } = useAuthContext();
   const isAuthenticated = useAuthenticated();
+  const dispatch = useDispatch()
   return (
     <Router>
-      <AuthProvider value={authService}>
-        <Provider store={store}>
-          <div className={css.App}>
-            <nav>
-              <NavLink to="/">Dashboard</NavLink>
-              <NavLink to="/list">List</NavLink>
-              <NavLink to="/board">Board</NavLink>
-              <NavLink to="/users">Users</NavLink>
-              <span className="flex-1" />
-              {!isAuthenticated && <LoginForm />}
-              {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
-            </nav>
-            <main>
-              <Switch>
-                <Route path="/" exact component={Dashboard} />
-                <Route path="/login" component={LoginPage} />
-                <ProtectedRoute path="/list" component={ListPage} fallback={<PleaseLogIn />} />
-                <ProtectedRoute path="/board" component={BoardPage} />
-                <Route path="/users" component={UsersPage} />
-              </Switch>
-            </main>
-          </div>
-        </Provider>
-      </AuthProvider>
+      <div className={css.App}>
+        <nav>
+          <NavLink to="/">Dashboard</NavLink>
+          <NavLink to="/list">List</NavLink>
+          <NavLink to="/board">Board</NavLink>
+          <NavLink to="/users">Users</NavLink>
+          <span className="flex-1" />
+          {!isAuthenticated && <LoginForm />}
+          {isAuthenticated && <button onClick={() => dispatch(logout())}>Log out</button>}
+        </nav>
+        <main>
+          <Switch>
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/login" component={LoginPage} />
+            <ProtectedRoute
+              path="/list"
+              component={ListPage}
+              fallback={<PleaseLogIn />}
+            />
+            <ProtectedRoute path="/board" component={BoardPage} />
+            <Route path="/users" component={UsersPage} />
+          </Switch>
+        </main>
+      </div>
     </Router>
   );
 }

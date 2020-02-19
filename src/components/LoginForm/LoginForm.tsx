@@ -1,41 +1,58 @@
 import React, { FormEvent, ChangeEvent } from "react";
-import { useAuthContext } from "../../model/auth-context";
+
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../model/rootReducer";
+import { register, login } from "../../model/api/auth";
 
 interface FormState {
-  username: string;
+  email: string;
   password: string;
 }
 
 const initialState: FormState = {
-  username: "",
+  email: "",
   password: ""
 };
 
 export const LoginForm: React.FC = () => {
-  const authService = useAuthContext(); 
+  const dispatch = useDispatch();
+  const error = useSelector<RootState, string | null>(
+    state => state.auth.error
+  );
 
   const [state, setState] = React.useState<FormState>(initialState);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
     setState({
       ...state,
       [event.target.name]: event.target.value
     });
   };
-  const handleSubmit = async (event: FormEvent) => {
+  const handleRegister = () => {
+    dispatch(register(state.email, state.password));
+  };
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    await authService.login(state.username, state.password);
+    dispatch(login(state.email, state.password));
   };
 
-  const handleRegister = async (event: any) => {
-    event.preventDefault();
-    await authService.register(state.username, state.password);
-  };
   return (
     <form onSubmit={handleSubmit}>
-      <input value={state.username} onChange={handleChange} name="username" type="text" required />
-      <input value={state.password} onChange={handleChange} name="password" type="password" required />
+      {error && <p>{error}</p>}
+      <input
+        value={state.email}
+        onChange={handleChange}
+        name="email"
+        type="email"
+        required
+      />
+      <input
+        value={state.password}
+        onChange={handleChange}
+        name="password"
+        type="password"
+        required
+      />
       <button type="submit">Login</button>
       <button type="button" onClick={handleRegister}>
         Register
