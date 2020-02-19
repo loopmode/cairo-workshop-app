@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User } from "fake-auth";
 
-interface AuthState {
+interface AuthSlice {
   isAuthenticated: boolean;
   user: User | null;
   error: string | null;
 }
-const initialState: AuthState = {
+const initialState: AuthSlice = {
   isAuthenticated: false,
   user: null,
   error: null
