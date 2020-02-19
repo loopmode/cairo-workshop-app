@@ -13,13 +13,9 @@ import { LoginPage } from "./pages/LoginPage";
 import { UsersPage } from "./pages/UsersPage";
 
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
-import { LoginForm } from "./components/LoginForm/LoginForm";
-import { useAuthenticated } from "./hooks/useAuthenticated";
-import LogoutButton from "./components/LogoutButton/LogoutButton";
+import { HeaderLogin } from "./components/HeaderLogin/HeaderLogin";
 
 function App() {
-  const isAuthenticated = useAuthenticated();
-
   return (
     <Router>
       <div className={css.App}>
@@ -29,19 +25,14 @@ function App() {
           <NavLink to="/board">Board</NavLink>
           <NavLink to="/users">Users</NavLink>
           <span className="flex-1" />
-          {!isAuthenticated && <LoginForm />}
-          <LogoutButton />
+          <HeaderLogin />
         </nav>
         <main>
           <Switch>
             <Route path="/" exact component={Dashboard} />
             <Route path="/login" component={LoginPage} />
             <ProtectedRoute path="/list" component={ListPage} />
-            <ProtectedRoute
-              path="/board"
-              component={BoardPage}
-              fallback={<h3>You need to be logged in!</h3>}
-            />
+            <ProtectedRoute path="/board" component={BoardPage} />
             <Route path="/users" component={UsersPage} />
           </Switch>
         </main>
