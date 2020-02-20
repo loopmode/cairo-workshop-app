@@ -6,8 +6,6 @@ export const StyledLink = styled(NavLink)<{ special?: boolean }>`
   &.active {
     text-decoration: underline;
   }
-  font-size: 50px;
-  color: ${props => (props.special ? "hotpink" : "inherit")};
 `;
 
 export const StyledApp = styled.div`
