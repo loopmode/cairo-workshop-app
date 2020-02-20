@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cairo-workshop-app/static/css/main.e522013e.chunk.css",
-    "main.js": "/cairo-workshop-app/static/js/main.ec09a373.chunk.js",
-    "main.js.map": "/cairo-workshop-app/static/js/main.ec09a373.chunk.js.map",
+    "main.js": "/cairo-workshop-app/static/js/main.e328e440.chunk.js",
+    "main.js.map": "/cairo-workshop-app/static/js/main.e328e440.chunk.js.map",
     "runtime-main.js": "/cairo-workshop-app/static/js/runtime-main.42dd228b.js",
     "runtime-main.js.map": "/cairo-workshop-app/static/js/runtime-main.42dd228b.js.map",
     "static/js/2.a02b7bf5.chunk.js": "/cairo-workshop-app/static/js/2.a02b7bf5.chunk.js",
     "static/js/2.a02b7bf5.chunk.js.map": "/cairo-workshop-app/static/js/2.a02b7bf5.chunk.js.map",
     "index.html": "/cairo-workshop-app/index.html",
-    "precache-manifest.d83434746f2a57f001469b1541229acd.js": "/cairo-workshop-app/precache-manifest.d83434746f2a57f001469b1541229acd.js",
+    "precache-manifest.1cea838aa77b86394a09d4334d2ebcaa.js": "/cairo-workshop-app/precache-manifest.1cea838aa77b86394a09d4334d2ebcaa.js",
     "service-worker.js": "/cairo-workshop-app/service-worker.js",
     "static/css/main.e522013e.chunk.css.map": "/cairo-workshop-app/static/css/main.e522013e.chunk.css.map",
     "static/js/2.a02b7bf5.chunk.js.LICENSE.txt": "/cairo-workshop-app/static/js/2.a02b7bf5.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.42dd228b.js",
     "static/js/2.a02b7bf5.chunk.js",
     "static/css/main.e522013e.chunk.css",
-    "static/js/main.ec09a373.chunk.js"
+    "static/js/main.e328e440.chunk.js"
   ]
 }
