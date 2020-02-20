@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cairo-workshop-app/precache-manifest.1cea838aa77b86394a09d4334d2ebcaa.js"
+  "/cairo-workshop-app/precache-manifest.5876751ccc14b919cad100adcebc5094.js"
 );
 
 self.addEventListener('message', (event) => {
