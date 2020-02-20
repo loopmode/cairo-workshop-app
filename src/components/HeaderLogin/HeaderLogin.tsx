@@ -1,8 +1,7 @@
 import React from "react";
 import { useAuthenticated } from "../../hooks/useAuthenticated";
 import LogoutButton from "../LogoutButton/LogoutButton";
-import { LoginForm } from "../LoginForm/LoginForm";
-import { Switch, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const HeaderLogin: React.FC = () => {
   const isAuthenticated = useAuthenticated();
@@ -11,9 +10,8 @@ export const HeaderLogin: React.FC = () => {
     return <LogoutButton />;
   }
   return (
-    <Switch>
-      <Route path="/login" render={() => null} />
-      <LoginForm />
-    </Switch>
+    <NavLink to="/login">
+      <button>Log in</button>
+    </NavLink>
   );
 };

@@ -8,7 +8,7 @@ function LogoutButton({ redirect = "" }) {
   const isAuthenticated = useAuthenticated();
   const history = useHistory();
   const dispatch = useDispatch();
-  const handleLogout = async () => {
+  const handleLogout = () => {
     dispatch(logout());
     if (redirect) {
       history.push(redirect);

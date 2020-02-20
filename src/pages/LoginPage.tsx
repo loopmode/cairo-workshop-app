@@ -7,7 +7,7 @@ export const LoginPage = () => {
   const isAuthenticated = useAuthenticated();
   const location = useLocation<{ from: string }>();
   const history = useHistory();
-  const { from } = location.state;
+  const { from } = location.state || { from: "/" };
   React.useEffect(() => {
     if (isAuthenticated && from) {
       history.push(from);
@@ -15,7 +15,7 @@ export const LoginPage = () => {
   }, [history, from, isAuthenticated]);
   return (
     <div>
-      <h1>Please log in</h1>
+      <h1>Log in</h1>
       <LoginForm />
     </div>
   );
