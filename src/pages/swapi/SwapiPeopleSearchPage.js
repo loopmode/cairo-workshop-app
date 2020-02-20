@@ -27,6 +27,7 @@ const urlUtils = {
   }
 };
 
+// we will later reset state, so we keep initial value as extra object
 const initialState = {
   results: [],
   isLoading: false,
@@ -102,6 +103,7 @@ export default class SwapiPeopleSearchPage extends React.Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.searchTerm) {
+      // you should _always_ encode strings you put in the URL!
       this.props.history.push(`/swapi/people/?searchTerm=${encodeURIComponent(this.state.searchTerm || "*")}`);
     } else {
       this.props.history.push(`/swapi/people/`);
@@ -128,13 +130,11 @@ export default class SwapiPeopleSearchPage extends React.Component {
     this.abortFetch = () => controller.abort();
 
     try {
-      let url = `${this.props.apiUrl}?format=json`;
-      if (searchTerm !== "*") {
-        url = `${url}&search=${searchTerm}`;
-      }
-      if (page) {
-        url = `${url}&page=${page}`;
-      }
+      const params = { format: "json" };
+      if (searchTerm !== "*") params.search = searchTerm;
+      if (page) params.page = page;
+
+      const url = `${this.props.apiUrl}${qs.stringify(params, { addQueryPrefix: true })}`;
       const response = await fetch(url, { signal });
       const { next, previous, results } = await response.json();
       this.setState({ isLoading: false, previous, next, results });
