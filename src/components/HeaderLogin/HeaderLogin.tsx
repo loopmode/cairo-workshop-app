@@ -9,9 +9,5 @@ export const HeaderLogin: React.FC = () => {
   if (isAuthenticated) {
     return <LogoutButton />;
   }
-  return (
-    <NavLink to="/login">
-      <button>Log in</button>
-    </NavLink>
-  );
+  return <NavLink to="/login">Log in</NavLink>;
 };
