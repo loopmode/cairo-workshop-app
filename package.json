@@ -1,5 +1,5 @@
 {
-  "name": "demo-1",
+  "name": "cairo-workshop-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,7 +32,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.15.1"
+    "@types/webpack-env": "^1.15.1",
+    "gh-pages": "^2.2.0"
   }
 }
