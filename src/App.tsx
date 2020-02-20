@@ -14,7 +14,7 @@ import * as SC from "./App.styled";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.NODE_ENV === "production" ? "/cairo-workshop-app/" : "/"}>
       <SC.StyledApp>
         <header>
           <nav>
