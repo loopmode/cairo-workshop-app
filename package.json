@@ -2,6 +2,7 @@
   "name": "cairo-workshop-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://loopmode.github.io/cairo-workshop-app/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.2.5",
     "@testing-library/jest-dom": "^4.2.4",
