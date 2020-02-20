@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.e522013e.chunk.css",
-    "main.js": "/static/js/main.4341d75a.chunk.js",
-    "main.js.map": "/static/js/main.4341d75a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f7365aff.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f7365aff.js.map",
-    "static/js/2.c5a89de3.chunk.js": "/static/js/2.c5a89de3.chunk.js",
-    "static/js/2.c5a89de3.chunk.js.map": "/static/js/2.c5a89de3.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6162bc904d3b7d235e0e6c9415c29337.js": "/precache-manifest.6162bc904d3b7d235e0e6c9415c29337.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.e522013e.chunk.css.map": "/static/css/main.e522013e.chunk.css.map",
-    "static/js/2.c5a89de3.chunk.js.LICENSE.txt": "/static/js/2.c5a89de3.chunk.js.LICENSE.txt"
+    "main.css": "/cairo-workshop-app/static/css/main.e522013e.chunk.css",
+    "main.js": "/cairo-workshop-app/static/js/main.ec09a373.chunk.js",
+    "main.js.map": "/cairo-workshop-app/static/js/main.ec09a373.chunk.js.map",
+    "runtime-main.js": "/cairo-workshop-app/static/js/runtime-main.42dd228b.js",
+    "runtime-main.js.map": "/cairo-workshop-app/static/js/runtime-main.42dd228b.js.map",
+    "static/js/2.a02b7bf5.chunk.js": "/cairo-workshop-app/static/js/2.a02b7bf5.chunk.js",
+    "static/js/2.a02b7bf5.chunk.js.map": "/cairo-workshop-app/static/js/2.a02b7bf5.chunk.js.map",
+    "index.html": "/cairo-workshop-app/index.html",
+    "precache-manifest.d83434746f2a57f001469b1541229acd.js": "/cairo-workshop-app/precache-manifest.d83434746f2a57f001469b1541229acd.js",
+    "service-worker.js": "/cairo-workshop-app/service-worker.js",
+    "static/css/main.e522013e.chunk.css.map": "/cairo-workshop-app/static/css/main.e522013e.chunk.css.map",
+    "static/js/2.a02b7bf5.chunk.js.LICENSE.txt": "/cairo-workshop-app/static/js/2.a02b7bf5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f7365aff.js",
-    "static/js/2.c5a89de3.chunk.js",
+    "static/js/runtime-main.42dd228b.js",
+    "static/js/2.a02b7bf5.chunk.js",
     "static/css/main.e522013e.chunk.css",
-    "static/js/main.4341d75a.chunk.js"
+    "static/js/main.ec09a373.chunk.js"
   ]
 }
