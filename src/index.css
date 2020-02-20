@@ -17,3 +17,9 @@ code {
 .flex-1 {
   flex: 1;
 }
+nav { 
+  display: flex;
+}
+nav a + a {
+  margin-left: 1em;
+}

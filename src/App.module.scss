@@ -1,10 +1,6 @@
-.App { 
-  nav {
+.App {
+  > nav {
     padding: 1em;
-    display: flex;
-    a + a {
-      margin-left: 1em;
-    }
   }
 
   main {
